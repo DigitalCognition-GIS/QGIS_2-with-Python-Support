@@ -1,0 +1,5 @@
+Hit:20 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial InRelease                                                                                
+Hit:21 http://qgis.org/debian xenial InRelease                                                                                                       
+
+
+
