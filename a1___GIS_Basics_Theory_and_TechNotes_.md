@@ -1,12 +1,18 @@
+
 #### Notes for learning the very basics of GIS - refrence of texts and online resources at the end of this Markdown file
 
 #
 
-Most of these basic definitions are historic and archaic in nature - unless explicitly stated. These notes are being collated as a matter of pedagogy about the historic perspective of GIS. 
+Most of these basic definitions are historic and archaic in nature - unless explicitly stated. These notes are being collated as a matter of pedagogy about the historic perspective of GIS in general. 
 
+- GIS - Geographic Information Systems (GIS)
+
+- GNSS - Global navigation satellite system (GNSS)
 
 - Map Server - A map server can broadly be defined as a software platform for dynamically generating spatially referenced (digital) map products from
 geospatial data.
+
+- Remote Sensing using supervised and unsupervised classification of raster data.
 
 - Subset - A subset or range query is a common operation where a user-defined region of interest (ROI) portion of the dataset is returned (as a map) to the user.
 
@@ -48,7 +54,7 @@ very important; the self-describing nature of XML allows programs to interpret t
 
 - SEA-COOS Ocean Observations (http://nautilus.baruch.sc.edu/portal_rs/)
 
-- 
+- Normalized difference vegetation index (NDVI) - 
 
 Pedagogy Notes specific to QGIS - these have been collated from various historic sources and not guaranteed to be upto date / current , for current updates kindly refer the QGIS user Guide - https://docs.qgis.org/2.18/pdf/en/QGIS-2.18-UserGuide-en.pdf :- 
 
