@@ -50,4 +50,14 @@ very important; the self-describing nature of XML allows programs to interpret t
 
 - 
 
-- 
+Pedagogy Notes specific to QGIS - these have been collated from various historic sources and not guaranteed to be upto date / current , for current updates kindly refer the QGIS user Guide - https://docs.qgis.org/2.18/pdf/en/QGIS-2.18-UserGuide-en.pdf :- 
+
+- QGIS Spatial Bookmarks - 
+
+- Attribute Table 
+
+- Vector Symbolization 
+
+- Project File. All the settings in a session can be stored in an XML-based project file. QGIS does not use a native format to store the data sources on disk. Instead it uses the external data formats and stores references to them in the project file.
+
+
