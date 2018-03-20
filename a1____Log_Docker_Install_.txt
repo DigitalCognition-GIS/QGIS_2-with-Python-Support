@@ -1,0 +1,406 @@
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop$ 
+(gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop$ source deactivate
+dhankar@dhankar-VPCEB44EN:~/Desktop$ cd ~
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get remove docker docker-engine docker.io
+[sudo] password for dhankar: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package 'docker-engine' is not installed, so not removed
+Package 'docker' is not installed, so not removed
+Package 'docker.io' is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 342 not upgraded.
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get install \
+>     apt-transport-https \
+>     ca-certificates \
+>     curl \
+>     software-properties-common
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+ca-certificates is already the newest version (20170717~16.04.1).
+curl is already the newest version (7.47.0-1ubuntu2.7).
+curl set to manually installed.
+software-properties-common is already the newest version (0.96.20.7).
+The following packages will be upgraded:
+  apt-transport-https
+1 upgraded, 0 newly installed, 0 to remove and 341 not upgraded.
+Need to get 26.1 kB of archives.
+After this operation, 1,024 B of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.26 [26.1 kB]
+Fetched 26.1 kB in 0s (48.4 kB/s)              
+(Reading database ... 430732 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_1.2.26_amd64.deb ...
+Unpacking apt-transport-https (1.2.26) over (1.2.20) ...
+Setting up apt-transport-https (1.2.26) ...
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+OK
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-key fingerprint 0EBFCD88
+pub   4096R/0EBFCD88 2017-02-22
+      Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid                  Docker Release (CE deb) <docker@docker.com>
+sub   4096R/F273FCD8 2017-02-22
+
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo add-apt-repository \
+>    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+>    $(lsb_release -cs) \
+>    stable"
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get install docker-ce
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package docker-ce is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'docker-ce' has no installation candidate
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run hello-world
+sudo: docker: command not found
+dhankar@dhankar-VPCEB44EN:~$ sudo add-apt-repository    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(xenial) \
+   stable"
+xenial: command not found
+dhankar@dhankar-VPCEB44EN:~$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get install docker-ce
+E: Malformed entry 81 in list file /etc/apt/sources.list (Component)
+E: The list of sources could not be read.
+E: Malformed entry 81 in list file /etc/apt/sources.list (Component)
+E: The list of sources could not be read.
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo gedit /etc/apt/sources.list
+
+(gedit:10772): Gtk-WARNING **: Calling Inhibit failed: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-spell-enabled not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-spell-enabled not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-spell-enabled not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:10772): WARNING **: Set document metadata failed: Setting attribute metadata::gedit-position not supported
+dhankar@dhankar-VPCEB44EN:~$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get install docker-ce
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package docker-ce is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'docker-ce' has no installation candidate
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get update
+Ign:1 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial InRelease
+Ign:2 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial Release
+Ign:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                       
+Ign:5 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main all Packages                                        
+Ign:6 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en_IN                                   
+Ign:7 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en                                      
+Ign:8 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 DEP-11 Metadata                               
+Ign:9 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main DEP-11 64x64 Icons                                  
+Ign:10 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 Packages                               
+Ign:11 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted i386 Packages                                
+Ign:12 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted all Packages                                 
+Ign:13 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en_IN                            
+Ign:14 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en                               
+Ign:15 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 DEP-11 Metadata                        
+Ign:16 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted DEP-11 64x64 Icons                           
+Ign:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages                                      
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                       
+Ign:5 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main all Packages                                        
+Ign:6 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en_IN                                   
+Ign:7 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en                                      
+Ign:8 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 DEP-11 Metadata                               
+Ign:9 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main DEP-11 64x64 Icons                                  
+Ign:10 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 Packages                               
+Ign:11 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted i386 Packages                                
+Ign:12 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted all Packages                                 
+Ign:13 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en_IN                            
+Ign:14 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en                               
+Ign:15 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 DEP-11 Metadata                        
+Ign:16 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted DEP-11 64x64 Icons                           
+Ign:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages                                      
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                                 
+Ign:5 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main all Packages                                                  
+Ign:6 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en_IN                                             
+Ign:7 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en                                                
+Ign:8 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 DEP-11 Metadata                                         
+Ign:9 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main DEP-11 64x64 Icons                                            
+Ign:10 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 Packages                                         
+Ign:11 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted i386 Packages                                          
+Ign:12 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted all Packages                                           
+Ign:13 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en_IN                                      
+Ign:14 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en                                         
+Ign:15 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 DEP-11 Metadata                                  
+Ign:16 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted DEP-11 64x64 Icons                                     
+Ign:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages                                                
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                                 
+Ign:5 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main all Packages                                                  
+Ign:6 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en_IN                                             
+Ign:7 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en                                                
+Ign:8 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 DEP-11 Metadata                                         
+Ign:9 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main DEP-11 64x64 Icons                                            
+Ign:10 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 Packages                                         
+Ign:11 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted i386 Packages                                          
+Ign:12 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted all Packages                                           
+Ign:13 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en_IN                                      
+Ign:14 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en                                         
+Ign:15 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 DEP-11 Metadata                                  
+Ign:16 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted DEP-11 64x64 Icons                                     
+Ign:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages                                                
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                                 
+Ign:5 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main all Packages                                                  
+Ign:6 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en_IN                                             
+Ign:7 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main Translation-en                                                
+Ign:8 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 DEP-11 Metadata                                         
+Ign:9 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main DEP-11 64x64 Icons                                            
+Ign:10 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 Packages                                         
+Ign:11 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted i386 Packages                                          
+Ign:12 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted all Packages                                           
+Ign:13 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en_IN                                      
+Ign:14 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted Translation-en                                         
+Ign:15 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted amd64 DEP-11 Metadata                                  
+Ign:16 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/restricted DEP-11 64x64 Icons                                     
+Err:3 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main amd64 Packages                                                
+  Please use apt-cdrom to make this CD-ROM recognized by APT. apt-get update cannot be used to add new CD-ROMs
+Ign:4 cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial/main i386 Packages                                                 
+Ign:17 http://dl.google.com/linux/chrome/deb stable InRelease                                                                                        
+Hit:18 http://archive.canonical.com/ubuntu xenial InRelease                                                                                          
+Hit:19 http://archive.ubuntu.com/ubuntu xenial InRelease                                                                                             
+Hit:20 http://ppa.launchpad.net/ubuntugis/ppa/ubuntu xenial InRelease                                                                                
+Hit:21 http://qgis.org/debian xenial InRelease                                                                                                       
+Get:22 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]                                                                            
+Hit:23 http://dl.google.com/linux/chrome/deb stable Release                                                                                          
+Ign:24 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 InRelease                                                                           
+Hit:25 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease                                                                             
+Ign:26 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 InRelease                                                                           
+Ign:27 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 Release                                                                  
+Get:29 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 Release [3,457 B]                                                       
+Get:30 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]                                 
+Get:31 http://apt.postgresql.org/pub/repos/apt xenial-pgdg InRelease [46.4 kB]                            
+Get:32 https://download.docker.com/linux/ubuntu xenial InRelease [65.8 kB]                                              
+Ign:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages                                                           
+Get:34 http://archive.ubuntu.com/ubuntu xenial-security InRelease [102 kB]                                                                     
+Get:35 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [742 kB]                                     
+Get:36 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages [3,329 B]                                 
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages                                                            
+Err:38 https://deb.opera.com/opera-stable stable InRelease                                                             
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D615560BA5C7FF72
+Hit:39 https://cli-assets.heroku.com/branches/stable/apt ./ InRelease               
+Get:40 http://archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [689 kB]  
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages                    
+Get:42 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 DEP-11 Metadata [317 kB]                  
+Get:43 http://archive.ubuntu.com/ubuntu xenial-updates/main DEP-11 64x64 Icons [226 kB]                                                   
+Get:44 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [601 kB]                                              
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN                 
+Get:46 http://apt.postgresql.org/pub/repos/apt xenial-pgdg/main amd64 Packages [82.2 kB]                      
+Get:47 http://archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [557 kB]                                    
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en                                
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata
+Get:50 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 DEP-11 Metadata [191 kB]
+Get:51 http://archive.ubuntu.com/ubuntu xenial-updates/universe DEP-11 64x64 Icons [272 kB]                                
+Ign:52 https://artifacts.elastic.co/packages/5.x/apt stable InRelease                                                
+Get:53 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 DEP-11 Metadata [5,888 B]                            
+Get:54 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 DEP-11 Metadata [3,324 B]                                        
+Get:55 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 DEP-11 Metadata [5,088 B]                                    
+Get:56 http://archive.ubuntu.com/ubuntu xenial-security/main amd64 DEP-11 Metadata [67.3 kB]                                         
+Get:57 http://archive.ubuntu.com/ubuntu xenial-security/main DEP-11 64x64 Icons [72.2 kB]                                           
+Get:58 http://archive.ubuntu.com/ubuntu xenial-security/universe amd64 DEP-11 Metadata [51.4 kB]                               
+Get:59 http://archive.ubuntu.com/ubuntu xenial-security/universe DEP-11 64x64 Icons [85.1 kB]                                        
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons                                 
+Get:61 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 Release.gpg [801 B]      
+Get:62 https://artifacts.elastic.co/packages/5.x/apt stable Release [4,360 B]           
+Get:63 https://cran.rstudio.com/bin/linux/ubuntu xenial/ InRelease [3,590 B]                                              
+Err:61 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 Release.gpg                                                
+  The following signatures were invalid: KEYEXPIRED 1515625755
+Ign:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages
+Get:64 https://artifacts.elastic.co/packages/5.x/apt stable Release.gpg [473 B]       
+Ign:64 https://artifacts.elastic.co/packages/5.x/apt stable Release.gpg                     
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages
+Hit:65 https://artifacts.elastic.co/packages/5.x/apt stable/main amd64 Packages
+Ign:65 https://artifacts.elastic.co/packages/5.x/apt stable/main amd64 Packages      
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN
+Hit:67 https://cran.csiro.au/bin/linux/ubuntu xenial/ InRelease
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en
+Hit:66 https://artifacts.elastic.co/packages/5.x/apt stable/main i386 Packages        
+Ign:66 https://artifacts.elastic.co/packages/5.x/apt stable/main i386 Packages                                   
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata                
+Hit:65 https://artifacts.elastic.co/packages/5.x/apt stable/main amd64 Packages
+Get:68 http://apt.postgresql.org/pub/repos/apt xenial-pgdg/main i386 Packages [79.4 kB]
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons
+Hit:66 https://artifacts.elastic.co/packages/5.x/apt stable/main i386 Packages
+Ign:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN                                                        
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en                                                           
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata                                                    
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons                                                       
+Ign:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages                                                           
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages                                                            
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages                                                             
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN                                                        
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en                                                           
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata                                                    
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons                                                       
+Ign:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages                                                           
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages                                                            
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages                                                             
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN                                                        
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en                                                           
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata                                                    
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons                                                       
+Err:33 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 Packages                                                           
+  404  Not Found
+Ign:37 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse i386 Packages
+Ign:41 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse all Packages
+Ign:45 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en_IN
+Ign:48 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse Translation-en
+Ign:49 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse amd64 DEP-11 Metadata
+Ign:60 http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0/multiverse DEP-11 64x64 Icons
+Fetched 4,480 kB in 14s (300 kB/s)
+AppStream cache update completed, but some metadata was ignored due to errors.
+Reading package lists... Done
+W: The repository 'cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719) xenial Release' does not have a Release file.
+N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: The repository 'http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 Release' does not have a Release file.
+N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://deb.opera.com/opera-stable stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D615560BA5C7FF72
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 Release: The following signatures were invalid: KEYEXPIRED 1515625755
+W: GPG error: https://artifacts.elastic.co/packages/5.x/apt stable Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D27D666CD88E42B4
+W: The repository 'https://artifacts.elastic.co/packages/5.x/apt stable Release' is not signed.
+N: Data from such a repository can't be authenticated and is therefore potentially dangerous to use.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+W: Failed to fetch https://deb.opera.com/opera-stable/dists/stable/InRelease  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D615560BA5C7FF72
+E: Failed to fetch cdrom://Ubuntu 16.04.1 LTS _Xenial Xerus_ - Release amd64 (20160719)/dists/xenial/main/binary-amd64/Packages  Please use apt-cdrom to make this CD-ROM recognized by APT. apt-get update cannot be used to add new CD-ROMs
+E: Failed to fetch http://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/3.0/multiverse/binary-amd64/Packages  404  Not Found
+W: Failed to fetch http://repo.mongodb.org/apt/ubuntu/dists/xenial/mongodb-org/3.4/Release.gpg  The following signatures were invalid: KEYEXPIRED 1515625755
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo apt-get install docker-ce
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  aufs-tools cgroupfs-mount libseccomp2
+The following NEW packages will be installed:
+  aufs-tools cgroupfs-mount docker-ce
+The following packages will be upgraded:
+  libseccomp2
+1 upgraded, 3 newly installed, 0 to remove and 340 not upgraded.
+Need to get 30.3 MB of archives.
+After this operation, 149 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libseccomp2 amd64 2.3.1-2.1ubuntu2~16.04.1 [38.7 kB]
+Get:2 https://download.docker.com/linux/ubuntu xenial/stable amd64 docker-ce amd64 17.12.1~ce-0~ubuntu [30.2 MB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/universe amd64 aufs-tools amd64 1:3.2+20130722-1.1ubuntu1 [92.9 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+Fetched 30.3 MB in 16s (1,873 kB/s)                                                                                                                  
+(Reading database ... 430732 files and directories currently installed.)
+Preparing to unpack .../libseccomp2_2.3.1-2.1ubuntu2~16.04.1_amd64.deb ...
+Unpacking libseccomp2:amd64 (2.3.1-2.1ubuntu2~16.04.1) over (2.2.3-3ubuntu3) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Setting up libseccomp2:amd64 (2.3.1-2.1ubuntu2~16.04.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Selecting previously unselected package aufs-tools.
+(Reading database ... 430732 files and directories currently installed.)
+Preparing to unpack .../aufs-tools_1%3a3.2+20130722-1.1ubuntu1_amd64.deb ...
+Unpacking aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+Unpacking cgroupfs-mount (1.2) ...
+Selecting previously unselected package docker-ce.
+Preparing to unpack .../docker-ce_17.12.1~ce-0~ubuntu_amd64.deb ...
+Unpacking docker-ce (17.12.1~ce-0~ubuntu) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for systemd (229-4ubuntu21.1) ...
+Setting up aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Setting up cgroupfs-mount (1.2) ...
+Setting up docker-ce (17.12.1~ce-0~ubuntu) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21.1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete 
+Digest: sha256:97ce6fa4b6cdc0790cda65fe7290b74cfebd9fa0c9b8c38e979330d547d22ce1
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ 
+
+
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete 
+Digest: sha256:97ce6fa4b6cdc0790cda65fe7290b74cfebd9fa0c9b8c38e979330d547d22ce1
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ 
+
