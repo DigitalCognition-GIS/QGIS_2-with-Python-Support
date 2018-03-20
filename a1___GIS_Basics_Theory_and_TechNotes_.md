@@ -75,7 +75,7 @@ Pedagogy Notes specific to QGIS - these have been collated from various historic
 - Semi-Automatic Classification Plugin - Source of Blogs and Tutorials from , Original Author :- https://fromgistors.blogspot.com
 - The SACP is installed from the Plugins dialogue of QGIS 2 
 - LANDSAT 8 Images and metadata procured from - https://espa.cr.usgs.gov
-- Own image classification code and screncaptures as seen here - https://www.linkedin.com/in/rohitdhankar/
+- Own image classification code and screencaptures etc , here - https://www.linkedin.com/in/rohitdhankar/
 
 #
 

@@ -1,3 +1,12 @@
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+
+https://espa.cr.usgs.gov/ordering/order-status/espa-rohit.dhankar@strategic-leadership-llc-india.com-0101803194954/
+https://fromgistors.blogspot.com/2014/06/land-cover-classification-using-SCP-3.html
+http://wiki.awf.forst.uni-goettingen.de/wiki/index.php/Land_Cover/Use_Classification_using_the_Semi-Automatic_Classification_Plugin_for_QGIS
+https://gis.stackexchange.com/questions/235157/semi-automatic-classification-plugin-scipy-dependency-error?rq=1
+https://docs.qgis.org/testing/en/docs/user_manual/introduction/getting_started.html#command-line-options
+https://gis.stackexchange.com/questions/214086/semi-automatic-classification-plugin-crush-dumped
 
 
 
