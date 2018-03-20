@@ -56,6 +56,8 @@ very important; the self-describing nature of XML allows programs to interpret t
 
 - Normalized difference vegetation index (NDVI) - 
 
+## QGIS 
+
 Pedagogy Notes specific to QGIS - these have been collated from various historic sources and not guaranteed to be upto date / current , for current updates kindly refer the QGIS user Guide - https://docs.qgis.org/2.18/pdf/en/QGIS-2.18-UserGuide-en.pdf :- 
 
 - QGIS Spatial Bookmarks - 
@@ -65,5 +67,18 @@ Pedagogy Notes specific to QGIS - these have been collated from various historic
 - Vector Symbolization 
 
 - Project File. All the settings in a session can be stored in an XML-based project file. QGIS does not use a native format to store the data sources on disk. Instead it uses the external data formats and stores references to them in the project file.
+
+#
+
+## QGIS Plugins :- 
+
+- Semi-Automatic Classification Plugin - Source of Blogs and Tutorials from , Original Author :- https://fromgistors.blogspot.com
+- The SACP is installed from the Plugins dialogue of QGIS 2 
+- LANDSAT 8 Images and metadata procured from - https://espa.cr.usgs.gov
+- Own image classification code and screncaptures as seen here - https://www.linkedin.com/in/rohitdhankar/
+
+#
+
+
 
 
