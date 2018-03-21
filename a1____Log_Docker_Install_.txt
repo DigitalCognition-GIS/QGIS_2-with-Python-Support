@@ -1,3 +1,119 @@
+
+### 21st MARCH 18 
+#
+#
+dhankar@dhankar-VPCEB44EN:~$ docker run ubuntu bash
+docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.35/containers/create: dial unix /var/run/docker.sock: connect: permission denied.
+See 'docker run --help'.
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run ubuntu bash
+[sudo] password for dhankar: 
+Unable to find image 'ubuntu:latest' locally
+docker: Error response from daemon: Get https://registry-1.docker.io/v2/: dial tcp: lookup registry-1.docker.io on 127.0.1.1:53: read udp 127.0.0.1:52629->127.0.1.1:53: i/o timeout.
+See 'docker run --help'.
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run hello-world
+[sudo] password for dhankar: 
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run -it ubuntu bash
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+22dc81ace0ea: Pull complete 
+1a8b3c87dba3: Pull complete 
+91390a1c435a: Pull complete 
+07844b14977e: Pull complete 
+b78396653dae: Pull complete 
+Digest: sha256:e348fbbea0e0a0e73ab0370de151e7800684445c509d46195aef73e090a49bd6
+Status: Downloaded newer image for ubuntu:latest
+root@c995d7c5e17e:/# 
+root@c995d7c5e17e:/# uname -v
+#140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018
+root@c995d7c5e17e:/# uname -s
+Linux
+root@c995d7c5e17e:/# uname -a
+Linux c995d7c5e17e 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+root@c995d7c5e17e:/# pip freeze
+bash: pip: command not found
+root@c995d7c5e17e:/# python
+bash: python: command not found
+root@c995d7c5e17e:/# ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@c995d7c5e17e:/# cd home
+root@c995d7c5e17e:/home# ls
+root@c995d7c5e17e:/home# cd ..
+root@c995d7c5e17e:/# cd lib
+root@c995d7c5e17e:/lib# ls
+init  lsb  systemd  terminfo  udev  x86_64-linux-gnu
+root@c995d7c5e17e:/lib# ^C
+root@c995d7c5e17e:/lib# exit
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker images
+[sudo] password for dhankar: 
+Sorry, try again.
+[sudo] password for dhankar: 
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+ubuntu                 latest              f975c5035748        2 weeks ago         112MB
+hello-world            latest              f2a91732366c        4 months ago        1.85kB
+kartoza/qgis-desktop   latest              c52dc19f7cb8        2 years ago         1.69GB
+dhankar@dhankar-VPCEB44EN:~$ sudo docker ps
+[sudo] password for dhankar: 
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+dhankar@dhankar-VPCEB44EN:~$ # Above Listing Docker Containers
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run -it ubuntu bash
+root@be5b8099d8fd:/# 
+root@be5b8099d8fd:/# uname -a
+Linux be5b8099d8fd 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+root@be5b8099d8fd:/# exit
+dhankar@dhankar-VPCEB44EN:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker ps -a
+CONTAINER ID        IMAGE                  COMMAND                  CREATED              STATUS                         PORTS               NAMES
+be5b8099d8fd        ubuntu                 "bash"                   About a minute ago   Exited (0) 58 seconds ago                          practical_fermat
+c995d7c5e17e        ubuntu                 "bash"                   About an hour ago    Exited (130) 18 minutes ago                        jovial_kirch
+91761424a8d7        hello-world            "/hello"                 About an hour ago    Exited (0) About an hour ago                       focused_chatterjee
+74bc5baaad36        kartoza/qgis-desktop   "/bin/sh -c /start.sh"   18 hours ago         Exited (1) 18 hours ago                            gifted_knuth
+5adb571f280a        kartoza/qgis-desktop   "/bin/sh -c /start.sh"   18 hours ago         Exited (1) 18 hours ago                            nostalgic_kare
+8ad022e55be5        hello-world            "/hello"                 20 hours ago         Exited (0) 20 hours ago                            heuristic_mcnulty
+dhankar@dhankar-VPCEB44EN:~$ sudo docker run -it ubuntu bash
+root@e1aa2dbeb05b:/# #testing 
+root@e1aa2dbeb05b:/# python
+bash: python: command not found
+root@e1aa2dbeb05b:/# exit
+dhankar@dhankar-VPCEB44EN:~$ sudo docker ps -a
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS                         PORTS               NAMES
+e1aa2dbeb05b        ubuntu                 "bash"                   26 seconds ago      Exited (127) 4 seconds ago                         jolly_swirles
+be5b8099d8fd        ubuntu                 "bash"                   3 minutes ago       Exited (0) 2 minutes ago                           practical_fermat
+c995d7c5e17e        ubuntu                 "bash"                   About an hour ago   Exited (130) 20 minutes ago                        jovial_kirch
+91761424a8d7        hello-world            "/hello"                 About an hour ago   Exited (0) About an hour ago                       focused_chatterjee
+74bc5baaad36        kartoza/qgis-desktop   "/bin/sh -c /start.sh"   18 hours ago        Exited (1) 18 hours ago                            gifted_knuth
+5adb571f280a        kartoza/qgis-desktop   "/bin/sh -c /start.sh"   18 hours ago        Exited (1) 18 hours ago                            nostalgic_kare
+8ad022e55be5        hello-world            "/hello"                 20 hours ago        Exited (0) 20 hours ago                            heuristic_mcnulty
+dhankar@dhankar-VPCEB44EN:~$ 
+
+
+
+
 (gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop$ 
 (gisenv) dhankar@dhankar-VPCEB44EN:~/Desktop$ source deactivate
 dhankar@dhankar-VPCEB44EN:~/Desktop$ cd ~
@@ -403,4 +519,161 @@ For more examples and ideas, visit:
 
 dhankar@dhankar-VPCEB44EN:~$ 
 dhankar@dhankar-VPCEB44EN:~$ 
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              f2a91732366c        3 months ago        1.85kB
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker pull kartoza/qgis-desktop
+Using default tag: latest
+latest: Pulling from kartoza/qgis-desktop
+d6d53a89ecb3: Pull complete 
+a3ed95caeb02: Pull complete 
+d9d089eaea53: Pull complete 
+7d666cf29864: Pull complete 
+8f3076b690e1: Pull complete 
+a4b80bff66bb: Pull complete 
+240520fd5458: Pull complete 
+0ce2ba9e18c0: Pull complete 
+29244e1a93a4: Pull complete 
+a3a74702bdab: Pull complete 
+527188e7aeb5: Pull complete 
+4be56cab744d: Pull complete 
+2990ff619d62: Pull complete 
+Digest: sha256:2099ac982cf198cdff1b0ef6e1182ebb5b873ea1f0022461305b09d4e48ce2aa
+Status: Downloaded newer image for kartoza/qgis-desktop:latest
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+hello-world            latest              f2a91732366c        3 months ago        1.85kB
+kartoza/qgis-desktop   latest              c52dc19f7cb8        2 years ago         1.69GB
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo cp run-qgis-master-in-docker.sh /usr/local/bin
+cp: cannot stat 'run-qgis-master-in-docker.sh': No such file or directory
+dhankar@dhankar-VPCEB44EN:~$ sudo cp run-qgis-master-in-docker.sh /usr/local/bin
+cp: cannot stat 'run-qgis-master-in-docker.sh': No such file or directory
+dhankar@dhankar-VPCEB44EN:~$ sudo cp QGIS-2.8.Docker.desktop /usr/share/applications/
+cp: cannot stat 'QGIS-2.8.Docker.desktop': No such file or directory
+dhankar@dhankar-VPCEB44EN:~$ sudo cp qgis-icon-60x60.png /usr/local
+cp: cannot stat 'qgis-icon-60x60.png': No such file or directory
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker images
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+hello-world            latest              f2a91732366c        3 months ago        1.85kB
+kartoza/qgis-desktop   latest              c52dc19f7cb8        2 years ago         1.69GB
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ sudo docker info
+Containers: 1
+ Running: 0
+ Paused: 0
+ Stopped: 1
+Images: 2
+Server Version: 17.12.1-ce
+Storage Driver: overlay2
+ Backing Filesystem: extfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: bridge host macvlan null overlay
+ Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Init Binary: docker-init
+containerd version: 9b55aab90508bd389d7654c4baf173a981477d55
+runc version: 9f9c96235cc97674e935002fc3d78361b696a69e
+init version: 949e6fa
+Security Options:
+ apparmor
+ seccomp
+  Profile: default
+Kernel Version: 4.4.0-116-generic
+Operating System: Ubuntu 16.04.1 LTS
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+XX
+Name: dhankar-VPCEB44EN
+XX
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Registry: https://index.docker.io/v1/
+Labels:
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false
+
+WARNING: No swap limit support
+dhankar@dhankar-VPCEB44EN:~$ 
+dhankar@dhankar-VPCEB44EN:~$ cd /var/lib/docker
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ sudo ls
+builder  containerd  containers  image	network  overlay2  plugins  runtimes  swarm  tmp  trust  volumes
+#
+sudo cp run-qgis-master-in-docker.sh /var/lib/docker
+
+## FART---
+
+
+Try 'uname --help' for more information.
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ uname --help
+Usage: uname [OPTION]...
+Print certain system information.  With no OPTION, same as -s.
+
+  -a, --all                print all information, in the following order,
+                             except omit -p and -i if unknown:
+  -s, --kernel-name        print the kernel name
+  -n, --nodename           print the network node hostname
+  -r, --kernel-release     print the kernel release
+  -v, --kernel-version     print the kernel version
+  -m, --machine            print the machine hardware name
+  -p, --processor          print the processor type (non-portable)
+  -i, --hardware-platform  print the hardware platform (non-portable)
+  -o, --operating-system   print the operating system
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/uname>
+or available locally via: info '(coreutils) uname invocation'
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ 
+
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ uname -a
+Linux dhankar-VPCEB44EN 4.4.0-116-generic #140-Ubuntu SMP Mon Feb 12 21:23:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ 
+
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ sudo docker version
+[sudo] password for dhankar: 
+Sorry, try again.
+[sudo] password for dhankar: 
+Client:
+ Version:	17.12.1-ce
+ API version:	1.35
+ Go version:	go1.9.4
+ Git commit:	7390fc6
+ Built:	Tue Feb 27 22:17:40 2018
+ OS/Arch:	linux/amd64
+
+Server:
+ Engine:
+  Version:	17.12.1-ce
+  API version:	1.35 (minimum version 1.12)
+  Go version:	go1.9.4
+  Git commit:	7390fc6
+  Built:	Tue Feb 27 22:16:13 2018
+  OS/Arch:	linux/amd64
+  Experimental:	false
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ 
+dhankar@dhankar-VPCEB44EN:/var/lib/docker$ 
+#
+#
+#
 
